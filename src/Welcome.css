@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Onest:wght@400;700&display=swap');
+
+.welcome-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100%;
+  background-color: white;
+  color: black;
+  font-family: 'Onest', sans-serif;
+  box-sizing: border-box;
+  text-align: center;
+  overflow: hidden; /* Hide elements before they animate in */
+}
+
+.welcome-main {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Animation Keyframes */
+@keyframes reveal-mist {
+  from {
+    opacity: 0;
+    filter: blur(8px);
+    transform: translate(-20px, -10px);
+  }
+  to {
+    opacity: 1;
+    filter: blur(0);
+    transform: translate(0, 0);
+  }
+}
+
+/* Base animation properties */
+.welcome-main > *, .welcome-footer > * {
+  opacity: 0; /* Start hidden */
+  animation: reveal-mist 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) forwards;
+}
+
+.welcome-main h1 {
+  font-size: 4rem;
+  font-weight: 700;
+  margin: 0;
+  letter-spacing: 0.1em;
+  animation-delay: 0.2s;
+}
+
+.welcome-main h3 {
+  font-size: 1.5rem;
+  font-weight: 400;
+  margin: 10px 0 25px 0;
+  animation-delay: 0.4s;
+}
+
+.start-button {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid black;
+  border-radius: 6px;
+  color: black;
+  background-color: transparent;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: 'Onest', sans-serif;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  animation-delay: 0.6s;
+}
+
+.start-button:hover {
+  background-color: black;
+  color: white;
+}
+
+.welcome-footer {
+  padding: 30px;
+}
+
+.welcome-footer h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin: 0 0 5px 0;
+  color: #555;
+  animation-delay: 0.8s;
+}
+
+.welcome-footer h6 {
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin: 0;
+  color: #777;
+  animation-delay: 1s;
+}
